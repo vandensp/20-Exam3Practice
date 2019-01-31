@@ -38,8 +38,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_practice_problem4a()
     #run_test_practice_problem4b()
-    run_test_practice_problem4c()
-    run_test_practice_problem4d()
+    #run_test_practice_problem4c()
+    #run_test_practice_problem4d()
 
 
 def is_prime(n):
@@ -305,7 +305,7 @@ def practice_problem4c(points):
       :rtype: rg.Point | string
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPORTANT: This problem is your LOWEST PRIORITY for preparing
@@ -316,6 +316,15 @@ def practice_problem4c(points):
     #    DIFFICULTY:      9
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    for k in range (len(points)):
+        if is_prime(points[k].x):
+            if is_prime(points[k].y):
+                x = points[k].x
+                y = points[k].y
+                points[k].x = y
+                points[k].y = x
+                return points[k]
+    return "Not found"
 
 
 def run_test_practice_problem4d():
